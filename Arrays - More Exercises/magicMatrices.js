@@ -17,13 +17,12 @@ function magicMatrices(arr) {
     }
 
     for (let i = 0; i < arr.length; i++) {
-        let sumRow = 0;
         let sumColumn = 0;
         for (let j = 0; j < arr.length; j++) {
-            sumRow += arr[j][i];
+            
             sumColumn += arr[j][i];
         }
-        if (sumRow != initialSum) {
+        
         if (sumColumn != initialSum) {
             isMagic = false;
         }
