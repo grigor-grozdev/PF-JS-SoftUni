@@ -19,8 +19,15 @@ function magicMatrices(arr) {
     for (let i = 0; i < arr.length; i++) {
         let sumColumn = 0;
         for (let j = 0; j < arr.length; j++) {
+<<<<<<< HEAD
             sumColumn += arr[j][i];
         }
+=======
+            
+            sumColumn += arr[j][i];
+        }
+        
+>>>>>>> 9477bba31e5e75085ef8cea0e8fb4099c934a854
         if (sumColumn != initialSum) {
             isMagic = false;
         }
