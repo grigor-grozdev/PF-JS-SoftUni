@@ -62,4 +62,4 @@ function orbit(input) {
 }
 
 orbit([5, 5,
-    4, 4])
+    0, 2])
