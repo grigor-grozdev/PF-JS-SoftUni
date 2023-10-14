@@ -11,7 +11,7 @@ function arrayManipulator(nums, commands) {
 
         } else if (action == 'addMany') {
             let idx = Number(token[1]);
-            let elementsToAdd = token.slice(2);
+            let elementsToAdd = token.slice(2).map(Number);
             for (let num of elementsToAdd) {
                 nums.splice(idx, 0, num);
                 idx++;
@@ -46,8 +46,8 @@ function arrayManipulator(nums, commands) {
             nums = pairedArr;
 
         } else if (action == 'print'){
-            console.log(`[${nums.join(', ')} ]`);
-
+            console.log(`[ ${nums.join(', ')} ]`);
+            break;
         }
 
     }
