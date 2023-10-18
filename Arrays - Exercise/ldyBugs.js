@@ -24,7 +24,7 @@ function ldyBugs(arr) {
         let moves = Number(flight[2]);
         let direction = flight[1];
         if (start < 0 || start >= fieldCount) {
-            break;
+            continue;
         } else {
         field[start] = 0;
         }
