@@ -24,11 +24,9 @@ function treasureHunt(arr) {
             }
 
         } else if (action == 'Steal') {
-            let index = Number(tokens[0]);
-            if (index >= 0 && index <= chest.length) {
-                console.log(chest.splice(chest.length - index).join(', '));
+            let count = Math.min(chest.length, Number(tokens[0]));
+             console.log(chest.splice(chest.length - count).join(', '));
             }
-        }
         i++
     }
     let sum = 0;
