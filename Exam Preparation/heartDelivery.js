@@ -18,12 +18,12 @@ function heartDelivery(input) {
             indexJump = 0;
             if (houses[indexJump] == 0) {
                 console.log(`Place ${indexJump} already had Valentine's day.`);
-                command = input.shift();
-                continue;
+                //command = input.shift();
+                //continue;
             } else {
                 houses[indexJump] -= 2;
                 if (houses[indexJump] <= 0) {
-                    houses[indexJump] = 0;
+                    
                     console.log(`Place ${indexJump} has Valentine's day.`)
                 }
             }
@@ -31,12 +31,12 @@ function heartDelivery(input) {
 
             if (houses[currIndex] == 0) {
                 console.log(`Place ${currIndex} already had Valentine's day.`);
-                command = input.shift();
-                continue;
+               // command = input.shift();
+                //continue;
             } else {
                 houses[currIndex] -= 2;
                 if (houses[currIndex] <= 0) {
-                    houses[currIndex] = 0;
+                    
                     console.log(`Place ${currIndex} has Valentine's day.`)
                 }
             }
@@ -64,7 +64,7 @@ function heartDelivery(input) {
     }
 }
 
-heartDelivery(["10",
+heartDelivery(["2@4@2",
 "Jump 2",
 "Jump 2",
 "Jump 8",

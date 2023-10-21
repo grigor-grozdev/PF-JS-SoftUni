@@ -33,7 +33,7 @@ function movingTarget(arr) {
             let start = index - radius;
             let end = index + radius;
             if (start >= 0 && end < targets.length) {
-                targets.splice(start, radius*2+1);
+                targets.splice(start, radius * 2 + 1);
             } else {
                 console.log(`Strike missed!`);
                 commands = arr.shift();
@@ -47,5 +47,5 @@ function movingTarget(arr) {
 }
 
 movingTarget(["1 2 3 4 5",
-"Strike 0 1",
-"End"])
+    "Strike 0 1",
+    "End"])
