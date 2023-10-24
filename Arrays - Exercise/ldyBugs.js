@@ -2,7 +2,7 @@ function ldyBugs(arr) {
     let fieldCount = arr.shift();
     let field = [];
     let ladybugs = arr.shift();
-    let ladybugsOnField = ladybugs.split(' ');
+    let ladybugsOnField = ladybugs.split(' ').map(Number);
 
     for (let index of ladybugsOnField) {
         if (index >= 0 && index < fieldCount) {
@@ -23,35 +23,39 @@ function ldyBugs(arr) {
         let start = Number(flight[0]);
         let moves = Number(flight[2]);
         let direction = flight[1];
-        if (start < 0 || start >= fieldCount) {
+        
+        if (start < 0 && start >= fieldCount && field[start] == 0) {
             continue;
-        } else {
-        field[start] = 0;
         }
+
+        field[start] = 0;
+        
 
         switch (direction) {
             case 'right':
                 let endR = start + moves;
-                for (let j = endR; j >= 0 && j < fieldCount; j += moves) {
-                    if (j >= fieldCount || j < 0) {
-                        break;
-                    } else if (field[j] == 0) {
-                        field[j] = 1;
-                        break;
+                
+                if (endR < field.length) {
+                    while (field[endR] == 1) {
+                        endR += moves;
+                    }
+                    if (endR < field.length) {
+                        field[endR] = 1;
                     }
                 }
                 break;
             case 'left':
                 let endL = start - moves;
-                for (let j = endL; j >= 0 && j < fieldCount; j -= moves) {
-                    //if (j >= fieldCount || j < 0) {
-                    //    break;
-                    //} else 
-                    if (field[j] == 0) {
-                        field[j] = 1;
-                        break;
+                
+                if (endL >= 0) {
+                    while (field[endL] == 1) {
+                        endL -= moves;
+                    }
+                    if (endL >= 0) {
+                        field[endL] = 1;
                     }
                 }
+                
                 break;
         }
     }
@@ -59,4 +63,4 @@ function ldyBugs(arr) {
 
 }
 
-ldyBugs([ 3, '0 1', '0 right 1', '2 right 1', '1 right -2' ]);
+ldyBugs([ 3, '0 1', '2 right 2', '0 right 1', '2 right 1' ])
