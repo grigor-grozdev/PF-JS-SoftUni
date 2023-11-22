@@ -1,14 +1,14 @@
-function postOffice(str) {
+function postOffice(input) {
 
-    let arr = str.split('|');
+    let pattern = /(?<strCapitalLetters>[^|]+)\|(?<wordLength>[^|]+)\|(?<words>[^|]+)/;
 
-    let strCapitalLetters = arr.shift()
-    
+    let matchInput = pattern.exec(input);
+
+    let { strCapitalLetters, wordLength, words } = matchInput.groups;
+
     let patternCapitalLetters = /([\#\$\%\&])(?<capitalLetters>[A-Z]+)\1/;
     let capitalLettersArr = strCapitalLetters.match(patternCapitalLetters);
     let { capitalLetters } = capitalLettersArr.groups;
-
-    let wordLength = arr.shift();
 
     let result = {};
 
@@ -25,7 +25,6 @@ function postOffice(str) {
         result[letter] = num;
     }
 
-    let words = arr.shift();
     let keys = Object.keys(result);
 
     for (let key of keys) {
