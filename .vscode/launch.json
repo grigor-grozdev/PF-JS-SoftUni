@@ -11,7 +11,9 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\Exam Preparation\\inventory.js"
+            "program": "${file}",
+
+            "outputCapture": "std"
         }
     ]
 }
