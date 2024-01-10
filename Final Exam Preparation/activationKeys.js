@@ -23,9 +23,9 @@ function activationKeys(arr) {
             let sub = key.slice(startIdx, endIdx);
 
             if (size == 'Upper') {
-            key = key.slice(0, startIdx) + sub.toUpperCase() + key.slice(endIdx);
+                key = key.slice(0, startIdx) + sub.toUpperCase() + key.slice(endIdx);
             } else {
-            key = key.slice(0, startIdx) + sub.toLowerCase() + key.slice(endIdx);
+                key = key.slice(0, startIdx) + sub.toLowerCase() + key.slice(endIdx);
             }
             console.log(key);
         } else if (action == 'Slice') {
@@ -44,10 +44,10 @@ function activationKeys(arr) {
 }
 
 activationKeys(["134softsf5ftuni2020rockz42",
-"Slice>>>3>>>7",
-"Contains>>>-rock",
-"Contains>>>-uni-",
-"Contains>>>-rocks",
-"Flip>>>Upper>>>2>>>8",
-"Flip>>>Lower>>>5>>>11",
-"Generate"])
+    "Slice>>>3>>>7",
+    "Contains>>>-rock",
+    "Contains>>>-uni-",
+    "Contains>>>-rocks",
+    "Flip>>>Upper>>>2>>>8",
+    "Flip>>>Lower>>>5>>>11",
+    "Generate"])
